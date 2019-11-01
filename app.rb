@@ -25,8 +25,9 @@ require_relative 'lib/player'
   end
 
   get '/attack' do
+    @player_1 = $player_1
     @player_2 = $player_2
-    @player_2.reduce_hp
+    @player_1.attack(@player_2)
     erb :attack
   end
 
